@@ -18,7 +18,7 @@ class CommentSection extends React.Component {
           />
           })
         }
-        <input type='text' placeholder='Some words or something.' />
+        <input type='text' placeholder='Add a comment...' />
       </div>
     )
   }
