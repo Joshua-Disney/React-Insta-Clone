@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import dummyData from './dummy-data';
+import PostContainer from './components/PostContainer/PostContainer';
+
 import './App.css';
 
 class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      dummyData,
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <h1>Disney's React App!  :D</h1>
-        </header>
+          {
+            this.state.dummyData.map((post) => {
+              return <PostContainer post={post} />
+            })
+          }
       </div>
     );
   }
