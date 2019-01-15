@@ -16,7 +16,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>Disney's React App!  :D</h1>
           <SearchBar />
           {
             this.state.dummyData.map((post) => {

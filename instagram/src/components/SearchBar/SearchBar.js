@@ -1,29 +1,24 @@
 import React from 'react';
 import './SearchBar.css';
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <div className='SearchBar'>
-        <div>
-          <i className='instaImage' class='fab fa-instagram'></i>
-          <img className='instaLogo' src='https://fontmeme.com/images/instagram-new-logo.png' alt='Instagram logo' />
-        </div>
-        <div>
-          <input type='text' placeholder=<i class="fas fa-search"></i>'search'></input>
-        </div>
-        <div>
-          <i class="far fa-compass"></i>
-          <i class="far fa-heart"></i>
-          <i class="far fa-user"></i>
-        </div>
+const SearchBar = () => {
+  return(
+    <div className='navBar'>
+      <div className='logos'>
+        <i className='fab fa-instagram  fa-2x'></i>
+        <img className='instaLogo' src='https://fontmeme.com/images/instagram-new-logo.png' alt='Instagram logo' />
       </div>
-    )
-  }
+      <div className='search'>
+        <span className='fa fa-search'></span>
+        <input placeholder='Search'/>
+      </div>
+      <div className='symbols'>
+        <i className='far fa-compass fa-lg'></i>
+        <i className='far fa-heart fa-lg'></i>
+        <i className='far fa-user fa-lg'></i>
+      </div>
+    </div>
+  )
 }
 
 export default SearchBar;
