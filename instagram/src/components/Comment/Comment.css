@@ -1,0 +1,8 @@
+.Comment {
+  display: flex;
+  align-items: baseline;
+}
+
+.Comment h4 {
+  padding-right: 10px;
+}
