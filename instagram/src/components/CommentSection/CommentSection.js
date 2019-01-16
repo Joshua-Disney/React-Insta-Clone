@@ -29,12 +29,12 @@ class CommentSection extends React.Component {
   };
 
   render() { 
-    console.log(this.commentList);
     return(
       <div className='CommentSection'>
         {
           this.state.commentList.map((comment) => {
             return <Comment 
+            key={comment.text}
             username={comment.username}
             text={comment.text}
           />
@@ -58,9 +58,7 @@ class CommentSection extends React.Component {
 }
 
 CommentSection.propTypes = {
-  comments: PropTypes.arrayOf(PropTypes.object).isRequired,
-  addNewComment: PropTypes.func.isRequired,
-  handleChanges: PropTypes.func.isRequired
+  comments: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default CommentSection;

@@ -29,7 +29,6 @@ class PostContainer extends React.Component {
   };
 
   render() {
-    console.log(this.state)
     const {thumbnailUrl, username, imageUrl, timestamp, comments} = this.props.post;
     return(
       <div className='PostContainer'>
@@ -42,14 +41,14 @@ class PostContainer extends React.Component {
           <div className='icons'>
             <i
               onClick={this.toggleLike}
-              class='far fa-heart fa-lg'
+              className='far fa-heart fa-lg'
               value={this.state.likes}
               type='number'
               name='likes'
               placeholder='heart'
               onChange={this.handleChanges}>
             </i>
-            <i class='far fa-comment fa-lg'></i>
+            <i className='far fa-comment fa-lg'></i>
           </div>
           <span className='likes'>{this.state.likes} likes</span>
         </div>
