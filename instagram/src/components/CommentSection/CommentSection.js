@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Comment from '../Comment/Comment';
 import './CommentSection.css';
 
@@ -7,7 +8,7 @@ class CommentSection extends React.Component {
     super(props);
   }
 
-  render() {
+  render() { 
     return(
       <div className='CommentSection'>
         {
@@ -18,6 +19,8 @@ class CommentSection extends React.Component {
           />
           })
         }
+        <h5>{moment(this.props.timestamp, 'MMMDD YYYY HH:mm:ss a', 'en').fromNow()}</h5>
+        <hr />
         <input type='text' placeholder='Add a comment...' />
       </div>
     )

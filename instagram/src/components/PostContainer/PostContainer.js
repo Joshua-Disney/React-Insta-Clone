@@ -8,10 +8,24 @@ class PostContainer extends React.Component {
   }
 
   render() {
+    const {thumbnailUrl, username, imageUrl, likes, timestamp, comments} = this.props.post;
     return(
       <div className='PostContainer'>
+        <div className='postHeader'>
+          <img className='thumbNail' src={thumbnailUrl} alt='user thumbnail' />
+          <h4>{username}</h4>
+        </div>
+        <img className='imageUrl' src={imageUrl} alt='post'/>
+        <div className='socialBar'>
+          <div className='icons'>
+            <i class="far fa-heart fa-lg"></i>
+            <i class="far fa-comment fa-lg"></i>
+          </div>
+          <span className='likes'>{likes} likes</span>
+        </div>
         <CommentSection 
-          comments={this.props.post.comments} 
+          comments={comments}
+          timestamp={timestamp} 
         />
       </div>
     )

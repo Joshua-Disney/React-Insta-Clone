@@ -17,11 +17,13 @@ class App extends Component {
     return (
       <div className="App">
           <SearchBar />
-          {
-            this.state.dummyData.map((post) => {
-              return <PostContainer post={post} />
-            })
-          }
+          <div className='container'>
+            {
+              this.state.dummyData.map((post) => {
+                return <PostContainer post={post} />
+              })
+            }
+          </div>
       </div>
     );
   }

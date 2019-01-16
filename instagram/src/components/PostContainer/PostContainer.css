@@ -1,0 +1,47 @@
+.PostContainer {
+  border: solid .5px lightgray;
+  margin: 60px 0;
+  background-color: white;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+
+.thumbNail {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.postHeader h4 {
+  font-weight: bold;
+}
+
+.imageUrl {
+  width: 100%;
+}
+
+.socialBar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.icons {
+  display: flex;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.fa-heart {
+  margin-right: 20px;
+}
+
+.likes {
+  font-weight: bold;
+}
