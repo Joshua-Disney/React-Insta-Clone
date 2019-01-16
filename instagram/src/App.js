@@ -9,18 +9,19 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      dummyData,
+      dummyData, 
     }
   }
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
           <SearchBar />
           <div className='container'>
             {
               this.state.dummyData.map((post) => {
-                return <PostContainer post={post} />
+                return <PostContainer 
+                  post={post} />
               })
             }
           </div>

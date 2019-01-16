@@ -23,7 +23,7 @@ class PostContainer extends React.Component {
           </div>
           <span className='likes'>{likes} likes</span>
         </div>
-        <CommentSection 
+        <CommentSection
           comments={comments}
           timestamp={timestamp} 
         />
