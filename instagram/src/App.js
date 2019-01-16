@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 import SearchBar from './components/SearchBar/SearchBar';
+import PropTypes from 'prop-types';
 
 import './App.css';
 
@@ -9,8 +10,12 @@ class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      dummyData, 
+      dummyData: []
     }
+  }
+
+  componentDidMount() {
+    this.setState({dummyData});
   }
 
   render() {

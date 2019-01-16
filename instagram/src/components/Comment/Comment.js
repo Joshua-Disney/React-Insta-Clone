@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Comment.css';
 
 class Comment extends React.Component {
@@ -15,6 +16,11 @@ class Comment extends React.Component {
       </div>
     )
   }
+}
+
+Comment.propTypes = {
+  username: PropTypes.string,
+  text: PropTypes.string
 }
 
 export default Comment;
