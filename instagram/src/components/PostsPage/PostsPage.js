@@ -7,7 +7,7 @@ class PostsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dummyData: [],
+      dummyData : [],
       posts: ''
     }
   }
@@ -28,6 +28,11 @@ class PostsPage extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  logOut = (event) => {
+    localStorage.removeItem('user');
+    window.location.reload();
+  };
+
   render() {
     const filteredPosts = this.filterPosts();
     return (
@@ -44,6 +49,9 @@ class PostsPage extends React.Component {
                 post={post} />
             })
           }
+          <form onSubmit={this.logOut}>
+            <button onClick={this.handleChanges}>Log Out</button>
+          </form>
         </div>
       </div>
     );

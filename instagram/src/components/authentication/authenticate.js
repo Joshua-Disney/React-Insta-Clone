@@ -1,20 +1,27 @@
 import React from 'react';
-import Login from '../Login';
-import App from '../../App';
 
-const authenticate = App => LoginPage => {
-  class App extends React.Component {
+const authenticate = App => Login => 
+  class extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         loggedIn: false
       }
     }
+
+    componentDidMount() {
+      if (!localStorage.getItem('user')) {
+        this.setState({ loggedIn: false });
+      } else {
+        this.setState({ loggedIn: true });
+      }
+    }
+
     render() {
-      return <FirstComponent />;
+      if (this.state.loggedIn) return <App />;
+      return <Login />;
     }
   }
-  return App
-}
 
-export default authenticate(App)(LoginPage);
+
+export default authenticate;

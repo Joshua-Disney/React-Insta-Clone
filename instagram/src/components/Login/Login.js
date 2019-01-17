@@ -9,35 +9,37 @@ class Login extends React.Component {
     }
   }
 
-  handleChanges = event => {
+  handleInputChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  createLogin = () => {
-    this.props.login(this.state.username);
-  }
+  login = (event) => {
+    const user = this.state.username;
+    localStorage.setItem('user', user);
+    window.location.reload();
+  };
 
   render() {
     return(
       <div className='Login'>
-        <form onSubmit={this.createLogin}>
+        <form onSubmit={this.login}>
           <div>
             <input 
               value={this.state.username}
               type='text'
               name='username'
               placeholder='username'
-              onChange={this.handleChanges}
+              onChange={this.handleInputChange}
             />
             <input
               value={this.state.password}
               type='text'
               name='password'
               placeholder='password'
-              onChange={this.handleChanges}
+              onChange={this.handleInputChange}
             />
           </div>
-          <button>Login</button>
+          <button onClick={this.handleChanges}>Login</button>
         </form>
       </div>
     )
