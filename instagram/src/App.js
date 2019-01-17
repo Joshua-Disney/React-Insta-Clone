@@ -32,6 +32,5 @@ class App extends React.Component {
   }
 }
 
-const Authenticate = authenticate(App);
 
-export default Authenticate;
+export default App;
