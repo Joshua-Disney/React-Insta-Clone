@@ -12,8 +12,6 @@ class PostContainer extends React.Component {
     }
   }
 
-
-
   toggleLike = event => {
     event.preventDefault();
     this.setState(({isLiked, likes}) => {
