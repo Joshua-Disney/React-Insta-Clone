@@ -1,4 +1,48 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const LoginBackground = styled.div`
+  max-width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 100px 0;
+  background-color: lightcyan;
+`;
+
+const LoginContainer = styled.div`
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid .5px lightgray;
+  border-radius: 5%;
+  background-color: white;
+`;
+
+const InstagramImage = styled.img`
+  width: 300px;
+  margin-bottom: 20px;
+`;
+
+const InputSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const LoginInput = styled.input`
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+`;
+
+const LoginButton = styled.button`
+  width: 300px;
+  border-radius: 5%;
+`;
+
 
 class Login extends React.Component {
   constructor(props) {
@@ -13,35 +57,39 @@ class Login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  login = (event) => {
+  login = () => {
     const user = this.state.username;
     localStorage.setItem('user', user);
     window.location.reload();
   };
 
+
   render() {
     return(
-      <div className='Login'>
-        <form onSubmit={this.login}>
-          <div>
-            <input 
-              value={this.state.username}
-              type='text'
-              name='username'
-              placeholder='username'
-              onChange={this.handleInputChange}
-            />
-            <input
-              value={this.state.password}
-              type='text'
-              name='password'
-              placeholder='password'
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <button onClick={this.handleChanges}>Login</button>
-        </form>
-      </div>
+      <LoginBackground>
+        <LoginContainer>
+          <InstagramImage src='https://fontmeme.com/images/instagram-new-logo.png' alt ='Instagram logo'/>
+          <form onSubmit={this.login}>
+            <InputSection>
+              <LoginInput 
+                value={this.state.username}
+                type='text'
+                name='username'
+                placeholder='username'
+                onChange={this.handleInputChange}
+              />
+              <LoginInput
+                value={this.state.password}
+                type='text'
+                name='password'
+                placeholder='password'
+                onChange={this.handleInputChange}
+              />
+            </InputSection>
+            <LoginButton onClick={this.handleChanges}>Login</LoginButton>
+          </form>
+        </LoginContainer>
+      </LoginBackground>
     )
   }
 }
