@@ -1,7 +1,54 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+
 import './PostContainer.css';
+
+const MainContainer = styled.div`
+  border: solid .5px lightgray;
+  margin: 60px 0;
+  background-color: white;
+`;
+
+const PostHeader = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 15px;
+`;
+
+const Thumbnail = styled.img`
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+`;
+
+const PostHeading = styled.h4`
+  font-weight: bold;
+`;
+
+const ImageUrl = styled.img`
+  width: 100%;
+`;
+
+const SocialBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  font-size: 2rem;
+  margin-bottom: 15px;
+`;
+
+const Likes = styled.span`
+  font-weight: bold;
+`;
 
 class PostContainer extends React.Component {
   constructor(props) {
@@ -29,14 +76,14 @@ class PostContainer extends React.Component {
   render() {
     const {thumbnailUrl, username, imageUrl, timestamp, comments} = this.props.post;
     return(
-      <div className='PostContainer'>
-        <div className='postHeader'>
-          <img className='thumbNail' src={thumbnailUrl} alt='user thumbnail' />
-          <h4>{username}</h4>
-        </div>
-        <img className='imageUrl' src={imageUrl} alt='post'/>
-        <div className='socialBar'>
-          <div className='icons'>
+      <MainContainer>
+        <PostHeader>
+          <Thumbnail src={thumbnailUrl} alt='user thumbnail' />
+          <PostHeading>{username}</PostHeading>
+        </PostHeader>
+        <ImageUrl src={imageUrl} alt='post'/>
+        <SocialBar>
+          <Icons>
             <i
               onClick={this.toggleLike}
               className='far fa-heart fa-lg'
@@ -47,14 +94,14 @@ class PostContainer extends React.Component {
               onChange={this.handleChanges}>
             </i>
             <i className='far fa-comment fa-lg'></i>
-          </div>
-          <span className='likes'>{this.state.likes} likes</span>
-        </div>
+          </Icons>
+          <Likes>{this.state.likes} likes</Likes>
+        </SocialBar>
         <CommentSection
           comments={comments}
           timestamp={timestamp} 
         />
-      </div>
+      </MainContainer>
     )
   }
 }

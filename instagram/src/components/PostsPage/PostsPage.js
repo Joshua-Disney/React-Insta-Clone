@@ -1,7 +1,15 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import dummyData from '../../dummy-data';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from '../PostContainer/PostContainer';
+
+
+const PostsContainer = styled.div`
+  max-width: 650px;
+  margin: 0 auto;
+`;
 
 class PostsPage extends React.Component {
   constructor(props) {
@@ -41,7 +49,7 @@ class PostsPage extends React.Component {
           posts={this.state.posts}
           handleChanges={this.handleChanges}
         />
-        <div className='container'>
+        <PostsContainer>
           {
             filteredPosts && filteredPosts.map((post) => {
               return <PostContainer
@@ -52,7 +60,7 @@ class PostsPage extends React.Component {
           <form onSubmit={this.logOut}>
             <button onClick={this.handleChanges}>Log Out</button>
           </form>
-        </div>
+        </PostsContainer>
       </div>
     );
   }

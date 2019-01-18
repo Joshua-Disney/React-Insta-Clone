@@ -1,8 +1,23 @@
 import React from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
+
 import Comment from '../Comment/Comment';
 import PropTypes from 'prop-types';
-import './CommentSection.css';
+
+
+const CommentInput = styled.input`
+  width: 98%;
+  padding: 10px;
+  border: none;
+`;
+
+const TimeStamp = styled.h5`
+  text-align: left;
+  padding-left: 15px;
+  font-size: 1.4rem;
+  color: gray;
+`;
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -40,10 +55,10 @@ class CommentSection extends React.Component {
           />
           })
         }
-        <h5>{moment(this.props.timestamp, 'MMMDD YYYY HH:mm:ss a', 'en').fromNow()}</h5>
+        <TimeStamp>{moment(this.props.timestamp, 'MMMDD YYYY HH:mm:ss a', 'en').fromNow()}</TimeStamp>
         <hr />
         <form onSubmit={this.addNewComment}>
-          <input
+          <CommentInput
             value={this.state.text}
             type='text'
             name='text'
