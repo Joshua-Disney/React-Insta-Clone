@@ -77,6 +77,7 @@ class Login extends React.Component {
                 name='username'
                 placeholder='username'
                 onChange={this.handleInputChange}
+                autoComplete='off'
               />
               <LoginInput
                 value={this.state.password}
@@ -84,6 +85,7 @@ class Login extends React.Component {
                 name='password'
                 placeholder='password'
                 onChange={this.handleInputChange}
+                autoComplete='off'
               />
             </InputSection>
             <LoginButton onClick={this.handleChanges}>Login</LoginButton>
